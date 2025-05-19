@@ -1,0 +1,20 @@
+{
+  "name": "Library AI Book Finder",
+  "version": "1.0",
+  "description": "An AI-powered Chrome extension that finds available books in a library catalog.",
+  "manifest_version": 3,
+  "permissions": ["activeTab", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://libraryhomepage.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
